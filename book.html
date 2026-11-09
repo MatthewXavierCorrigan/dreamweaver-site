@@ -14,6 +14,49 @@ body{margin:0;background:#FFF7FA}
 a{color:#3243AF}a:hover{color:#232A6B}
 </style>
 <style>button.acc .icon-minus{display:none} button.acc[aria-expanded="true"] .icon-minus{display:block} button.acc[aria-expanded="true"] .icon-plus{display:none} [hidden]{display:none!important} input:focus,textarea:focus{outline:2px solid #3243AF;outline-offset:1px}</style>
+<style>
+/* ---- Mobile layout (matches the Mobile page on the design board) ---- */
+@media (max-width: 700px) {
+  .dw-nav{padding:16px 20px 8px!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:flex-start!important;gap:6px!important}
+  .dw-brand-mark{width:40px!important;height:40px!important}
+  .dw-brand-name{font-size:24px!important}
+  .dw-navlinks{font-size:15px!important;flex-wrap:nowrap!important;margin-left:-14px!important}
+  .dw-navlink{padding:12px 14px!important}
+  .dw-navlinks .dw-navlink:last-child{padding-right:0!important}
+  .dw-sep{height:22px!important}
+  .dw-footer{padding:40px 20px 48px!important;flex-direction:column!important;align-items:flex-start!important;gap:24px!important}
+  .dw-footer-logo{width:210px!important;height:64px!important}
+  .dw-btn{display:flex!important;justify-content:center!important}
+  .dw-h1{font-size:46px!important;line-height:1.04!important}
+  /* Home */
+  .dw-hero-wm{width:640px!important;height:638px!important;margin-left:-420px!important;margin-top:-319px!important}
+  .dw-hero{padding:48px 20px 56px!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important;gap:40px!important}
+  .dw-hero-text,.dw-hero-fig{flex:none!important}
+  .dw-hero-text{gap:22px!important}
+  .dw-h1-hero{font-size:46px!important;line-height:1.04!important}
+  .dw-hero-sub{font-size:20px!important;max-width:none!important}
+  .dw-btnrow{flex-direction:column!important;gap:12px!important;padding-top:6px!important}
+  .dw-about{padding:56px 20px 64px!important;flex-direction:column!important;flex-wrap:nowrap!important;gap:24px!important}
+  .dw-about > div{flex:none!important}
+  .dw-about-h{font-size:24px!important;letter-spacing:.18em!important;line-height:1.3!important}
+  .dw-about-body{font-size:16px!important;line-height:1.75!important;gap:20px!important}
+  .dw-about-lead{font-size:19px!important}
+  /* Services */
+  .dw-intro{padding:48px 20px 36px!important;gap:20px!important}
+  .dw-intro-p{font-size:16px!important;line-height:1.75!important}
+  .dw-acc-sec{padding:0 20px 64px!important}
+  button.acc{padding:20px 0!important;gap:16px!important;font-size:25px!important;line-height:1.2!important}
+  button.acc svg{width:24px!important;height:24px!important;flex:none!important}
+  .dw-panel{padding:0 0 32px!important;gap:18px!important;font-size:15px!important;line-height:1.75!important}
+  .dw-cta{padding-top:36px!important;flex-direction:column!important}
+  /* Book a Session */
+  .dw-book-wm{width:720px!important;height:717px!important;margin-left:-360px!important;margin-top:-358px!important}
+  .dw-book-main{padding:48px 20px 64px!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important;gap:32px!important}
+  .dw-book-text,.dw-book-cal{flex:none!important}
+  .dw-book-text{gap:20px!important}
+  .dw-book-p{font-size:16px!important;line-height:1.75!important}
+}
+</style>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -34,34 +77,34 @@ fbq('track', 'PageView');
 <div style="background: #FFF7FA; font-family: 'Jost', sans-serif; color: #16182E; min-height: 100vh; display: flex; flex-direction: column">
 
 <header style="background: #3243AF">
-<nav aria-label="Main" style="max-width: 1240px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
-<a href="index.html" aria-label="Dreamweaver Hypnosis, home" style="display: flex; align-items: center; gap: 14px; text-decoration: none">
-<img src="assets/mark-orchid.png" alt="" aria-hidden="true" style="width: 48px; height: 48px">
-<span style="font-family: 'EB Garamond', serif; font-size: 28px; line-height: 1; color: #F3CCEF">Dreamweaver Hypnosis</span>
+<nav class="dw-nav" aria-label="Main" style="max-width: 1240px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px">
+<a href="/" aria-label="Dreamweaver Hypnosis, home" style="display: flex; align-items: center; gap: 14px; text-decoration: none">
+<img class="dw-brand-mark" src="assets/mark-orchid.png" alt="" aria-hidden="true" style="width: 48px; height: 48px">
+<span class="dw-brand-name" style="font-family: 'EB Garamond', serif; font-size: 28px; line-height: 1; color: #F3CCEF">Dreamweaver Hypnosis</span>
 </a>
-<div style="display: flex; flex-wrap: wrap; align-items: center; font-size: 17px">
-<a href="index.html" style="color: #FFFFFF; text-decoration: none; padding: 12px 20px; min-height: 44px; box-sizing: border-box">About</a>
-<span aria-hidden="true" style="width: 0; height: 28px; border-left: 2px dotted #FFFFFF"></span>
-<a href="services.html" style="color: #FFFFFF; text-decoration: none; padding: 12px 20px; min-height: 44px; box-sizing: border-box">Services</a>
-<span aria-hidden="true" style="width: 0; height: 28px; border-left: 2px dotted #FFFFFF"></span>
-<a href="book.html" aria-current="page" style="color: #F3CCEF; text-decoration: none; padding: 12px 0 12px 20px; min-height: 44px; box-sizing: border-box">Book a Session</a>
+<div class="dw-navlinks" style="display: flex; flex-wrap: wrap; align-items: center; font-size: 17px">
+<a class="dw-navlink" href="/" style="color: #FFFFFF; text-decoration: none; padding: 12px 20px; min-height: 44px; box-sizing: border-box">About</a>
+<span class="dw-sep" aria-hidden="true" style="width: 0; height: 28px; border-left: 2px dotted #FFFFFF"></span>
+<a class="dw-navlink" href="/services" style="color: #FFFFFF; text-decoration: none; padding: 12px 20px; min-height: 44px; box-sizing: border-box">Services</a>
+<span class="dw-sep" aria-hidden="true" style="width: 0; height: 28px; border-left: 2px dotted #FFFFFF"></span>
+<a class="dw-navlink" href="/book" aria-current="page" style="color: #F3CCEF; text-decoration: none; padding: 12px 0 12px 20px; min-height: 44px; box-sizing: border-box">Book a Session</a>
 </div>
 </nav>
 </header>
 
 <div style="flex: 1; position: relative; overflow: hidden">
-<img src="assets/mark-blue.png" alt="" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 1100px; height: 1096px; margin-left: -550px; margin-top: -548px; opacity: 0.07; pointer-events: none">
-<main style="position: relative; max-width: 1240px; margin: 0 auto; padding: 88px 24px 104px; box-sizing: border-box; width: 100%; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 56px 88px">
+<img class="dw-book-wm" src="assets/mark-blue.png" alt="" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 1100px; height: 1096px; margin-left: -550px; margin-top: -548px; opacity: 0.07; pointer-events: none">
+<main class="dw-book-main" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 88px 24px 104px; box-sizing: border-box; width: 100%; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 56px 88px">
 
-<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div class="dw-book-text" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
 <div style="display: flex; flex-direction: column; gap: 12px">
 
-<h1 style="margin: 0; font-family: 'EB Garamond', serif; font-weight: 400; font-size: clamp(44px, 6vw, 72px); line-height: 1.02; color: #232A6B">Book a Session</h1>
+<h1 class="dw-h1" style="margin: 0; font-family: 'EB Garamond', serif; font-weight: 400; font-size: clamp(44px, 6vw, 72px); line-height: 1.02; color: #232A6B">Book a Session</h1>
 </div>
-<p style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 17px; line-height: 1.8">We get started with a free, one-on-one consultation call. Tell me a little about yourself and I’ll be in touch to find a time.<br><br>Once we've had our initial conversation, we can book a session. The sessions take place at my office in Ridgewood, or can be arranged remotely. A full session is priced at $200 and is an hour to 90 minutes in length.</p>
+<p class="dw-book-p" style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 17px; line-height: 1.8">We get started with a free, one-on-one consultation call. Tell me a little about yourself and I’ll be in touch to find a time.<br><br>Once we've had our initial conversation, we can book a session. The sessions take place at my office in Ridgewood, or can be arranged remotely. A full session is priced at $200 and is an hour to 90 minutes in length.</p>
 </div>
 
-<div style="flex: 1.4 1 480px; min-width: 0">
+<div class="dw-book-cal" style="flex: 1.4 1 480px; min-width: 0">
 <!-- Calendly inline widget begin -->
 <div class="calendly-inline-widget" data-url="https://calendly.com/d/d2ms-pxj-7rr?text_color=0b0b12&primary_color=3243af" style="min-width:320px;height:700px;"></div>
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
@@ -71,8 +114,8 @@ fbq('track', 'PageView');
 </div>
 
 <footer style="background: #232A6B; color: #FFFFFF">
-<div style="max-width: 1240px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px 48px">
-<img src="assets/logo-orchid.png" alt="Dreamweaver Hypnosis" style="width: 260px; height: 80px">
+<div class="dw-footer" style="max-width: 1240px; margin: 0 auto; padding: 48px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px 48px">
+<img class="dw-footer-logo" src="assets/logo-orchid.png" alt="Dreamweaver Hypnosis" style="width: 260px; height: 80px">
 <div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px; font-weight: 300; line-height: 1.6">
 <span>Ridgewood, Queens</span>
 <a href="mailto:rob@dreamweaver.guide" style="color: #F3CCEF">rob@dreamweaver.guide</a>
