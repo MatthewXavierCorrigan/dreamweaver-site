@@ -126,12 +126,31 @@ fbq('track', 'PageView');
 </div>
 
 <script>
-// Send a Meta "Schedule" event when someone books through the Calendly widget
-window.addEventListener('message', function (e) {
-  if (e.origin === 'https://calendly.com' && e.data && e.data.event === 'calendly.event_scheduled' && window.fbq) {
-    fbq('track', 'Schedule');
+// Calendly runs inside an iframe, so Meta can't see its buttons directly.
+// Calendly announces bookings to this page with window.postMessage; we listen
+// for that and send the Meta Pixel events ourselves.
+(function () {
+  var sent = {};
+  function fromCalendly(e) {
+    return /^https:\/\/([a-z0-9-]+\.)*calendly\.com$/.test(e.origin) &&
+      e.data && typeof e.data === 'object' &&
+      typeof e.data.event === 'string' && e.data.event.indexOf('calendly.') === 0;
   }
-});
+  window.addEventListener('message', function (e) {
+    if (!fromCalendly(e) || typeof window.fbq !== 'function') return;
+    var name = e.data.event;
+    if (name === 'calendly.date_and_time_selected' && !sent.time) {
+      sent.time = true;
+      fbq('trackCustom', 'CalendlyTimeSelected');
+    }
+    if (name === 'calendly.event_scheduled' && !sent.booked) {
+      sent.booked = true;
+      fbq('track', 'Schedule', { content_name: 'Free consultation call' });
+      fbq('track', 'Lead', { content_name: 'Free consultation call' });
+      if (window.console) console.log('[Dreamweaver] Calendly booking sent to Meta Pixel');
+    }
+  });
+})();
 </script>
 </body>
 </html>
